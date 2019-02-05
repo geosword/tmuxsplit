@@ -31,7 +31,7 @@ fi
 # get the current tty
 mytty=$(${TTYBIN})
 # Then look for it in the list of tmux panes
-tmuxsession=$($TMUXBIN list-panes -a -F '#{pane_tty} #{session_name}' | ${GREP} "${mytty}" | ${AWK} '{print $2}')
+tmuxsession=$($TMUXBIN list-panes -a -F '#{pane_tty} #{session_name}' | ${GREP} "${mytty} " | ${AWK} '{print $2}')
 
 for (( i=1; i<${#RESULTS[@]}; i++ ));
 do
